@@ -1,3 +1,28 @@
+## README
+
+## Desafio Backend Blu:
+
+Aplicação desenvolvido em Ruby on Rails, em que o usuário realiza o upload de arquivos com informações referentes as transações financeiras e após o processamento, os dados são salvos no banco de dados.
+
+### Tecnologias utilizadas foram:
+
+- `ruby 2.7.1`;
+- `Rails 6.0.2.1`;
+- `PostgreSQL 13.0`;
+
+### Passo a passo para execução da aplicação:
+
+- clonar o prjeto do github;
+- rodar o comando `bundle install`;
+- rodar o comando `yarn install`;
+- configurar o banco de dados com o comando (necessária instalação prévia do PostgreSQL): `rake db:drop && rake db:create && rake db:migrate && rake db:seed && rake db:test:prepare`;
+- rodar o comando `rspec` para execução dos testes;
+- rodar o comando `rails s` para iniciar a aplicação em `http://localhost:3000`;
+- criar o usuário e a senha na tela de login na opção `Sign Up`;
+- o arquivo CNAB.txt está na raíz do projeto para ser utilizado na aplicação;
+
+---
+
 # Desafio programação - para vaga Back-end
 
 Por favor leiam este documento do começo ao fim, com muita atenção.
@@ -35,30 +60,30 @@ Sua tarefa é criar uma interface web que aceite upload do [arquivo CNAB](https:
 
 # Documentação do CNAB
 
-| Descrição do campo  | Inicio | Fim | Tamanho | Comentário
-| ------------- | ------------- | -----| ---- | ------
-| Tipo  | 1  | 1 | 1 | Tipo da transação
-| Data  | 2  | 9 | 8 | Data da ocorrência
-| Valor | 10 | 19 | 10 | Valor da movimentação. *Obs.* O valor encontrado no arquivo precisa ser divido por cem(valor / 100.00) para normalizá-lo.
-| CPF | 20 | 30 | 11 | CPF do beneficiário
-| Cartão | 31 | 42 | 12 | Cartão utilizado na transação 
-| Hora  | 43 | 48 | 6 | Hora da ocorrência atendendo ao fuso de UTC-3
-| Dono da loja | 49 | 62 | 14 | Nome do representante da loja
-| Nome loja | 63 | 81 | 19 | Nome da loja
+| Descrição do campo | Inicio | Fim | Tamanho | Comentário                                                                                                                |
+| ------------------ | ------ | --- | ------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Tipo               | 1      | 1   | 1       | Tipo da transação                                                                                                         |
+| Data               | 2      | 9   | 8       | Data da ocorrência                                                                                                        |
+| Valor              | 10     | 19  | 10      | Valor da movimentação. _Obs._ O valor encontrado no arquivo precisa ser divido por cem(valor / 100.00) para normalizá-lo. |
+| CPF                | 20     | 30  | 11      | CPF do beneficiário                                                                                                       |
+| Cartão             | 31     | 42  | 12      | Cartão utilizado na transação                                                                                             |
+| Hora               | 43     | 48  | 6       | Hora da ocorrência atendendo ao fuso de UTC-3                                                                             |
+| Dono da loja       | 49     | 62  | 14      | Nome do representante da loja                                                                                             |
+| Nome loja          | 63     | 81  | 19      | Nome da loja                                                                                                              |
 
 # Documentação sobre os tipos das transações
 
-| Tipo | Descrição | Natureza | Sinal |
-| ---- | -------- | --------- | ----- |
-| 1 | Débito | Entrada | + |
-| 2 | Boleto | Saída | - |
-| 3 | Financiamento | Saída | - |
-| 4 | Crédito | Entrada | + |
-| 5 | Recebimento Empréstimo | Entrada | + |
-| 6 | Vendas | Entrada | + |
-| 7 | Recebimento TED | Entrada | + |
-| 8 | Recebimento DOC | Entrada | + |
-| 9 | Aluguel | Saída | - |
+| Tipo | Descrição              | Natureza | Sinal |
+| ---- | ---------------------- | -------- | ----- |
+| 1    | Débito                 | Entrada  | +     |
+| 2    | Boleto                 | Saída    | -     |
+| 3    | Financiamento          | Saída    | -     |
+| 4    | Crédito                | Entrada  | +     |
+| 5    | Recebimento Empréstimo | Entrada  | +     |
+| 6    | Vendas                 | Entrada  | +     |
+| 7    | Recebimento TED        | Entrada  | +     |
+| 8    | Recebimento DOC        | Entrada  | +     |
+| 9    | Aluguel                | Saída    | -     |
 
 # Avaliação
 
